@@ -1,0 +1,166 @@
+.ops-section-wrapper {
+  position: relative; min-height: 100vh; display: flex; background-color: #0d1117; overflow: hidden; padding-top: 100px; padding-bottom: 80px;
+}
+.ops-bg-image {
+  position: absolute; inset: 0; background-size: cover; background-position: center top; transition: background-image 0.6s ease-in-out; z-index: 1;
+}
+.ops-bg-vignette {
+  position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10,15,24,0.95) 0%, rgba(10,15,24,0.3) 30%, rgba(10,15,24,0.3) 60%, rgba(10,15,24,0.95) 100%); z-index: 2;
+}
+.ops-content-row { align-items: flex-start; padding-top: 4vh; }
+
+.ops-giant-title { font-family: var(--font-heading, 'Oswald', sans-serif); font-size: 2.8rem; font-weight: 700; color: #ffffff; text-transform: uppercase; margin-bottom: 2rem; }
+
+.ops-timeline-container {
+  display: flex; flex-direction: column; gap: 12px; border-left: 1px solid rgba(255, 255, 255, 0.2); padding-left: 30px; position: relative; min-height: 500px; scroll-behavior: smooth;
+}
+.ops-timeline-container::-webkit-scrollbar { width: 0; height: 0; }
+
+.ops-tab-card {
+  position: relative; width: 100%; max-width: 220px; height: 65px; border: 1px solid rgba(255, 255, 255, 0.1); padding: 10px 15px; display: flex; align-items: flex-end; cursor: pointer; transition: all 0.3s ease; background-color: #1a1a1a; overflow: visible; 
+}
+.ops-tab-bg-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
+.ops-tab-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 100%); z-index: 1; }
+.ops-tab-card:hover .ops-tab-overlay { background: linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%); }
+
+.ops-tab-label { position: relative; z-index: 2; color: #ffffff; font-family: var(--font-heading, 'Oswald', sans-serif); font-size: 0.95rem; font-weight: 600; text-transform: uppercase; }
+.ops-lock-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 3; color: rgba(255,255,255,0.4); }
+
+.ops-tab-card.active { border: 2px solid #eab308; transform: translateX(10px); }
+.ops-tab-card.active .ops-tab-bg-img { opacity: 1; }
+
+.ops-active-indicator { position: absolute; left: -42px; top: 50%; transform: translateY(-50%); display: flex; align-items: center; z-index: 4; }
+.ops-indicator-square { width: 8px; height: 8px; border: 2px solid #eab308; box-shadow: 0 0 8px #eab308; }
+.ops-indicator-line { width: 32px; height: 2px; background-color: #eab308; }
+
+.ops-tab-card:not(.active)::before {
+  content: ''; position: absolute; left: -32.5px; top: 50%; transform: translateY(-50%); width: 4px; height: 4px; background-color: rgba(255, 255, 255, 0.4);
+}
+.ops-tab-card.locked { cursor: not-allowed !important; opacity: 0.5; }
+.ops-tab-card.locked:hover { background-color: rgba(20, 25, 35, 0.7) !important; }
+
+.ops-right-col { min-height: 650px; }
+.ops-detail-box-animated { animation: fadeSlideRight 0.4s ease-out forwards; }
+.ops-detail-box { background: transparent; width: 100%; height: 650px; overflow-y: auto; padding-right: 20px; }
+.ops-detail-box::-webkit-scrollbar { width: 4px; }
+.ops-detail-box::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.02); border-radius: 10px; }
+.ops-detail-box::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.2); border-radius: 10px; }
+.ops-detail-box:hover::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.4); }
+
+.ops-detail-name { font-family: var(--font-heading, 'Oswald', sans-serif); font-size: 3rem; font-weight: 800; color: #ffffff; text-transform: uppercase; text-shadow: 0 4px 10px rgba(0,0,0,0.6); }
+.ops-detail-realname { color: #00e676; font-size: 1.05rem; font-weight: 500; margin-bottom: 20px; }
+.ops-divider-main { border: 1px solid; height: 2px; background: rgba(255,255,255,0.4); margin-bottom: 25px; }
+.ops-divider-thin { border: 1px solid; height: 1px; background: rgba(255,255,255,0.15); margin: 0; }
+
+.ops-skill-row { display: flex; align-items: flex-start; gap: 20px; }
+.ops-skill-icon { font-size: 2.2rem; line-height: 1; width: 45px; text-align: center; flex-shrink: 0; }
+.ops-skill-text { flex-grow: 1; }
+
+.ops-role-title { font-family: var(--font-heading, 'Oswald', sans-serif); font-size: 1.35rem; font-weight: 700; margin-bottom: 6px; text-transform: uppercase; }
+.ops-skill-title { color: #ffffff; font-family: var(--font-heading, 'Oswald', sans-serif); font-size: 1.25rem; font-weight: 600; margin-bottom: 6px; }
+.ops-desc-text { color: #cccccc; font-size: 0.95rem; line-height: 1.6; margin: 0; }
+
+@keyframes fadeSlideRight { 0% { opacity: 0; transform: translateX(20px); } 100% { opacity: 1; transform: translateX(0); } }
+
+@media (max-width: 991.98px) {
+  .ops-section-wrapper {
+    padding-top: 60px; height: 100vh; display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .ops-bg-vignette {
+    background: linear-gradient(180deg, rgba(13,17,23,0) 0%, rgba(13,17,23,0.75) 45%, rgba(13,17,23,0.95) 75%, rgba(13,17,23,1) 100%);
+  }
+
+  .ops-mobile-title { color: #ffffff; font-family: var(--font-heading, 'Oswald', sans-serif); font-size: 2rem; font-weight: 300; letter-spacing: 2px; padding-bottom: 230px; }
+
+  .ops-right-col { min-height: auto; width: 100%; }
+  .ops-detail-box { height: auto; overflow-y: visible; padding-right: 0; }
+  .ops-detail-name { font-size: 2.2rem; }
+  .ops-detail-realname { font-size: 0.9rem; margin-bottom: 10px; }
+
+  .ops-mobile-role-row { gap: 10px; }
+  .ops-role-icon-mobile { font-size: 1.5rem; width: auto; margin-top: 2px;}
+  .ops-role-title { font-size: 1rem; display: inline-block !important; margin-right: 8px;}
+  .ops-desc-text { font-size: 0.85rem; line-height: 1.5; color: #b0b0b0; display: inline; }
+
+  .ops-mobile-skills-grid {
+    display: grid; grid-template-columns: 3fr 3fr; border-top: 3px solid rgba(255,255,255,0.1); border-bottom: 3px solid rgba(255,255,255,0.1); margin-top: 20px;
+  }
+  .ops-skill-wrapper { padding: 15px 5px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .ops-skill-wrapper:nth-last-child(-n+2) { border-bottom: none; }
+  .ops-skill-wrapper:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.1); }
+  .ops-mobile-skill-item { gap: 10px; align-items: center; }
+  .ops-mobile-skill-item .ops-skill-icon { font-size: 1.5rem; width: 30px; }
+  
+  .ops-skill-title-top { font-size: 0.75rem; color: #ffffff; font-weight: 600; text-transform: uppercase; margin-bottom: 2px;}
+  .ops-skill-title-bottom { font-size: 0.85rem; color: #00e676; font-weight: 600; }
+  .ops-skill-wrapper:not(:first-child) .ops-skill-title-bottom { color: #00e676; }
+
+  .ops-nav-mobile-wrapper { width: 100%; justify-content: center; position: relative; margin-top: 10px; }
+  .ops-nav-arrow { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 8px 12px; cursor: pointer; z-index: 5; }
+
+  .ops-big-arrow {
+    position: absolute; top: 35%; transform: translateY(-50%); background: transparent; border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.7); width: 35px; height: 50px; font-size: 1.3rem; z-index: 5; display: flex; align-items: center; justify-content: center;
+  }
+  .ops-big-arrow.left { left: 10px; }
+  .ops-big-arrow.right { right: 10px; }
+  .ops-big-arrow:disabled { opacity: 0.2; cursor: not-allowed; }
+
+  /* 2. CĂN CHỈNH KHUNG ĐIỀU HƯỚNG TIMELINE & MŨI TÊN NHỎ */
+  .ops-nav-mobile-wrapper { 
+    width: 100%; display: flex; justify-content: center; align-items: flex-start; position: relative; 
+    margin-top: 10px; margin-bottom: 20px; padding: 0 10px; 
+  }
+  .ops-nav-arrow { 
+    background: transparent; border: none; color: #888; font-size: 1.4rem; padding: 0 10px; 
+    cursor: pointer; z-index: 5; margin-top: -2px; 
+  }
+
+  /* 3. TẠO ĐƯỜNG KẺ NGANG XUYÊN TÂM CHUẨN WEAPONS */
+  .ops-tab-card::after { 
+    content: ''; position: absolute; left: 0; right: 0; top: 15px; height: 1px; background: rgba(255,255,255,0.2); z-index: 0; 
+  }
+
+  /* Xóa bỏ border và flex-direction cũ bị lỗi */
+  .ops-timeline-container::before { display: none; }
+  .ops-timeline-line-mobile { display: none; }
+
+  .ops-timeline-container {
+    flex-direction: row; border-left: none; padding-left: 0; min-height: auto; overflow-x: auto; scroll-snap-type: x mandatory; gap: 0; flex-grow: 1; position: relative;
+    padding-top: 0; padding-bottom: 10px; align-items: flex-start; width: 100%;
+  }
+
+  /* 4. CĂN CHỈNH THẺ BÀI MOBILE */
+  .ops-tab-card {
+    min-width: 105px; height: auto; padding: 0 5px; background: transparent; border: none; 
+    flex-direction: column; align-items: center; justify-content: flex-start; scroll-snap-align: center; gap: 8px; z-index: 1;
+  }
+  .ops-tab-bg-img, .ops-tab-overlay, .ops-tab-card:not(.active)::before { display: none; }
+
+  /* 5. CÁC Ô CHỈ BÁO TRẠNG THÁI (VUÔNG VÀNG CÓ CHẤM TRẮNG / VUÔNG XÁM) */
+  .ops-active-indicator { 
+    height: 30px; width: 100%; margin: 0; padding: 0; display: flex; align-items: center; justify-content: center; background: transparent; position: relative; z-index: 2; transform: none; left: auto; top: auto; 
+  }
+  .ops-indicator-square { 
+    width: 20px; height: 20px; border: 2px solid #eab308; background-color: #0d1117; box-shadow: none; border-radius: 0; display: flex; align-items: center; justify-content: center; 
+  }
+  .ops-indicator-square::after { 
+    content: ''; width: 6px; height: 6px; background-color: #ffffff; border: none; display: block;
+  }
+  .ops-indicator-line { display: none !important; }
+
+  .ops-mobile-inactive-square { 
+    width: 10px; height: 10px; border: 1px solid rgba(255,255,255,0.4); background: #0d1117; z-index: 2; margin: 10px auto; position: relative; transform: none; left: auto; top: auto;
+  }
+
+  .ops-lock-icon { 
+    font-size: 14px; line-height: 14px; margin: 8px auto; background: #0d1117; padding: 0 4px; z-index: 2; color: rgba(255,255,255,0.4); position: relative; transform: none; left: auto; top: auto; display: block; 
+  }
+
+  /* 6. FONT CHỮ TEXT HIỂN THỊ DƯỚI CÙNG */
+  .ops-tab-label { 
+    font-size: 0.8rem; color: #a0a0a0; margin-top: 0; font-family: Arial, sans-serif; letter-spacing: 0; font-weight: 600; white-space: normal; text-align: center; line-height: 1.35; width: 100%; text-transform: uppercase;
+  }
+  .ops-tab-card.active { transform: none; border: none; background: transparent; }
+  .ops-tab-card.active .ops-tab-label { color: #eab308; font-weight: 700; }
+  .ops-tab-card.locked .ops-tab-label { color: #6b7280; }
+}

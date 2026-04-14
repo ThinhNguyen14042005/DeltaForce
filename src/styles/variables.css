@@ -1,0 +1,29 @@
+:root {
+  --font-heading: "Orbitron", sans-serif;
+  --font-body: "Rajdhani", sans-serif;
+
+  --app-bg: #060a12;
+  --app-bg-soft: #0b1019;
+  --app-bg-card: rgba(255, 255, 255, 0.05);
+
+  --text-main: #ffffff;
+  --text-muted: #aeb8c7;
+  --text-soft: #7f8ba0;
+
+  --primary: #39e6a3;
+  --primary-hover: #20c78a;
+  --secondary-accent: #70b8ff;
+  --danger-accent: #ff5d5d;
+  --warning-accent: #ffcf5a;
+
+  --border-soft: rgba(255, 255, 255, 0.12);
+  --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.25);
+  --shadow-strong: 0 18px 45px rgba(0, 0, 0, 0.35);
+
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 24px;
+
+  --bottom-nav-height: 78px;
+
+}

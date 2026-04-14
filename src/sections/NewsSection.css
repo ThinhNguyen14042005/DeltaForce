@@ -1,0 +1,67 @@
+.news-card-custom {
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.news-card-custom:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 36px rgba(0, 0, 0, 0.32);
+}
+.news-category-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.news-tab-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 8px 30px;
+  transition: all 0.3s ease;
+}
+.news-tab-btn.active {
+  background-color: #39e6a3; /* Màu Neon */
+  color: #000;
+  border-color: #39e6a3;
+}
+.news-card-title {
+  font-family: var(--font-heading);
+  letter-spacing: 0.6px;
+  line-height: 1.35;
+}
+
+.news-card-custom .card-text {
+  font-size: 1.02rem;
+}
+@media (max-width: 991.98px) {
+  .news-category-container {
+    display: grid !important;
+    grid-template-columns: repeat(6, 32r); 
+    gap: 7px; 
+  }
+
+  .news-tab-btn {
+    border-radius: 0 !important;
+    width: 100%;
+    padding: 12px 5px !important;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+  }
+
+  .news-tab-btn.active {
+    background: rgba(57, 230, 163, 0.1); 
+    color: #39e6a3;
+    border: 1px solid #39e6a3;
+  }
+
+  .news-load-more-btn {
+    width: 100%; 
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #fff;
+    padding: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}

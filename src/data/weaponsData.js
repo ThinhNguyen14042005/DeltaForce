@@ -1,0 +1,67 @@
+const weaponsData = [
+  {
+    id: "m7",
+    label: "Súng Trường Xung Kích M7",
+    image: "/images/weapons/M7.jpg", // Ảnh ngang cho PC
+    mobileImage: "/images/weapons/M7_mobile.jpg", // Ảnh dọc cho Mobile
+    thumb: "/images/weapons/modelM7.png",
+    desc: "Sử dụng đạn 6.8x51mm, hiệu suất hỏa lực cao phù hợp với giao tranh tầm trung hoặc tương đối xa.",
+    mobileBgPos: "center 40%", 
+  },
+  {
+    id: "vector",
+    label: "Súng Tiểu Liên Vector",
+    image: "/images/weapons/Vector.jpg",
+    mobileImage: "/images/weapons/Vector_mobile.jpg",
+    thumb: "/images/weapons/modelVector.png",
+    desc: "Sử dụng đạn .45 caliber với số phát bắn trên phút rất cao và hiệu suất dồn sát thương lớn khi giao tranh ở khoảng cách gần.",
+    mobileBgPos: "center 40%",
+  },
+  {
+    id: "m870",
+    label: "Súng Shotgun M870",
+    image: "/images/weapons/M870.jpg",
+    mobileImage: "/images/weapons/M870_mobile.jpg",
+    thumb: "/images/weapons/modelM870.png",
+    desc: "Một vũ khí thông dụng, sử dụng đạn 12-Gauge với cơ chế đẩy tạo thành 8 đường bay khác nhau trong một thời điểm.",
+    mobileBgPos: "center 40%",
+  },
+  {
+    id: "pkm",
+    label: "Súng Máy Đa Năng PKM",
+    image: "/images/weapons/PKM.jpg",
+    mobileImage: "/images/weapons/PKM_mobile.jpg",
+    thumb: "/images/weapons/modelPKM.png",
+    desc: "Súng máy tự động dùng đạn 7.62x54mmR với số phát bắn trên phút tương đối tốt và cho ra hỏa lực mạnh để áp chế kẻ địch.",
+    mobileBgPos: "center 40%",
+  },
+  {
+    id: "sr25",
+    label: "Súng Trường Thiện Xạ SR-25",
+    image: "/images/weapons/SR-25.jpg",
+    mobileImage: "/images/weapons/SR-25_mobile.jpg",
+    thumb: "/images/weapons/modelSR-25.png",
+    desc: "Sử dụng đạn 7.62x51mm với khả năng bắn bán tự động, giúp cải thiện độ chính xác và ưu điểm giao tranh lớn.",
+    mobileBgPos: "center 40%",
+  },
+  {
+    id: "awm",
+    label: "Súng Bắn Tỉa AWM",
+    image: "/images/weapons/AWM.jpg",
+    mobileImage: "/images/weapons/AWM_mobile.jpg",
+    thumb: "/images/weapons/modelAWM.png",
+    desc: "AWM là súng bắn tỉa được phát minh bởi Anh Quốc, sử dụng đạn .338 Lapua Magnum. Độ chính xác vượt trội, là vũ khí vua trong lĩnh vực bắn tỉa.",
+    mobileBgPos: "center 40%",
+  },
+  {
+    id: "comingsoon",
+    label: "Sắp ra mắt",
+    image: "", 
+    mobileImage: "",
+    thumb: "", 
+    desc: "",
+    locked: true,
+  }
+];
+
+export default weaponsData;

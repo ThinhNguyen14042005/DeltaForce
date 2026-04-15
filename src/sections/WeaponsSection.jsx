@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import weaponsData from "../data/weaponsData";
 import "./WeaponsSection.css";
+import FadeInSection from "../components/common/FadeInSection";
 
 function WeaponsSection() {
   const [activeId, setActiveId] = useState(weaponsData[0]?.id || "");
@@ -31,7 +32,6 @@ function WeaponsSection() {
   return (
     <section id="weapons" className="wpn-section-wrapper">
 
-      {/* BACKGROUND SỬ DỤNG BIẾN CSS ĐỂ TRÁO ẢNH GIỮA PC VÀ MOBILE */}
       <div 
         className="wpn-bg-image" 
         style={{ 
@@ -42,7 +42,6 @@ function WeaponsSection() {
       />
       <div className="wpn-bg-overlay" />
 
-      {/* MŨI TÊN CHUYỂN SÚNG (CHỈ HIỆN TRÊN MOBILE) */}
       <button className="wpn-big-arrow left d-block d-lg-none" onClick={handlePrevWpn} disabled={currentIndex === 0}>
         <i className="bi bi-chevron-left"></i>
       </button>
@@ -50,18 +49,16 @@ function WeaponsSection() {
         <i className="bi bi-chevron-right"></i>
       </button>
 
-      {/* HEADER MOBILE */}
       <div className="wpn-mobile-header d-block d-lg-none position-relative z-3 text-center w-100 pt-4">
         <h2 className="wpn-mobile-title">| VŨ KHÍ |</h2>
       </div>
 
-      <div className="container-xl h-100 position-relative z-3">
+      <FadeInSection className="container-xl h-100 position-relative z-3">
         <div className="row h-100 wpn-content-row d-flex flex-column-reverse flex-lg-row">
 
           <div className="col-12 col-lg-4 col-xl-3 wpn-left-col mt-auto mt-lg-0 pb-3 pb-lg-0">
             <h2 className="wpn-giant-title d-none d-lg-block">VŨ KHÍ</h2>
             
-            {/* THÔNG TIN SÚNG (TÊN + MÔ TẢ) CHỈ HIỆN TRÊN MOBILE CHUẨN ẢNH BẠN GỬI */}
             {!activeWeapon.locked && (
               <div className="wpn-mobile-info-block d-block d-lg-none">
                 <h3 className="wpn-mobile-info-name">{activeWeapon.label}</h3>
@@ -119,7 +116,7 @@ function WeaponsSection() {
           <div className="col-12 col-lg-8 col-xl-9 wpn-right-col mb-4 mb-lg-0"></div>
 
         </div>
-      </div>
+      </FadeInSection>
     </section>
   );
 }

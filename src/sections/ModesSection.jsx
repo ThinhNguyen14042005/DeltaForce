@@ -18,7 +18,7 @@ function ModesSection() {
       />
       <div className="modes-bg-vignette" />
 
-      <div className="container-xl h-100 position-relative z-3">
+      <FadeInSection className="container-xl h-100 position-relative z-3">
         <div className="row h-100 modes-content-row">
           
           <div className="col-12 col-lg-4 col-xl-3 modes-left-col">
@@ -67,7 +67,7 @@ function ModesSection() {
           </div>
 
         </div>
-      </div>
+      </FadeInSection>
     </section>
   );
 }

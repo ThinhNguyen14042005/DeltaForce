@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import vehiclesData from "../data/vehiclesData";
 import "./VehiclesSection.css";
+import FadeInSection from "../components/common/FadeInSection";
 
 function VehiclesSection() {
   const [activeId, setActiveId] = useState(vehiclesData[0]?.id || "");
@@ -31,7 +32,6 @@ function VehiclesSection() {
   return (
     <section id="vehicles" className="veh-section-wrapper">
 
-      {/* BACKGROUND ĐỘNG: Tráo ảnh PC và Mobile theo đúng kích thước màn hình */}
       <div 
         className="veh-bg-image" 
         style={{ 
@@ -42,7 +42,6 @@ function VehiclesSection() {
       />
       <div className="veh-bg-vignette" />
 
-      {/* MŨI TÊN CHUYỂN PHƯƠNG TIỆN (CHỈ HIỆN TRÊN MOBILE) */}
       <button className="veh-big-arrow left d-block d-lg-none" onClick={handlePrevVeh} disabled={currentIndex === 0}>
         <i className="bi bi-chevron-left"></i>
       </button>
@@ -50,18 +49,16 @@ function VehiclesSection() {
         <i className="bi bi-chevron-right"></i>
       </button>
 
-      {/* HEADER MOBILE */}
       <div className="veh-mobile-header d-block d-lg-none position-relative z-3 text-center w-100 pt-4">
         <h2 className="veh-mobile-title">| PHƯƠNG TIỆN |</h2>
       </div>
 
-      <div className="container-xl h-100 position-relative z-3">
+      <FadeInSection className="container-xl h-100 position-relative z-3">
         <div className="row h-100 veh-content-row d-flex flex-column-reverse flex-lg-row">
 
           <div className="col-12 col-lg-3 veh-left-col mt-auto mt-lg-0 pb-3 pb-lg-0">
             <h2 className="veh-giant-title d-none d-lg-block">PHƯƠNG TIỆN</h2>
 
-            {/* THÔNG TIN MOBILE RÚT GỌN KÈM HIỆU ỨNG TRƯỢT TEXT */}
             {!activeVehicle.locked && (
               <div key={activeId} className="veh-mobile-info-block d-block d-lg-none">
                 <h3 className="veh-mobile-info-name">{activeVehicle.name}</h3>
@@ -82,15 +79,12 @@ function VehiclesSection() {
                     className={`veh-tab-card ${activeId === item.id ? "active" : ""} ${item.locked ? "locked" : ""}`}
                     onClick={() => !item.locked && setActiveId(item.id)}
                   >
-                    {/* INDICATOR ACTIVE (Dùng chung) */}
                     {activeId === item.id && !item.locked && (
                       <div className="veh-active-indicator">
                         <div className="veh-indicator-square"></div>
                         <div className="veh-indicator-line d-none d-lg-block"></div>
                       </div>
                     )}
-
-                    {/* INDICATOR INACTIVE (Chỉ Mobile) */}
                     {activeId !== item.id && !item.locked && (
                       <div className="veh-mobile-inactive-square d-block d-lg-none"></div>
                     )}
@@ -104,7 +98,6 @@ function VehiclesSection() {
                         )}
                       </div>
 
-                      {/* Ổ Khóa (Chỉ hiện trên dòng kẻ ngang của Mobile) */}
                       {item.locked && <i className="bi bi-lock-fill veh-lock-icon-mobile d-block d-lg-none" />}
 
                       <span className="veh-tab-label">{item.locked ? "SẮP RA MẮT" : item.label}</span>
@@ -119,7 +112,6 @@ function VehiclesSection() {
             </div>
           </div>
 
-          {/* CỘT PHẢI CHI TIẾT KỸ NĂNG (TÀNG HÌNH TRÊN MOBILE ĐỂ LỘ MÔ HÌNH XE) */}
           <div className="col-12 col-lg-5 ms-auto veh-right-col d-none d-lg-block">
             <div key={activeId} className="veh-detail-box-animated">
               <div className="veh-detail-box">
@@ -164,7 +156,7 @@ function VehiclesSection() {
           </div>
 
         </div>
-      </div>
+      </FadeInSection>
     </section>
   );
 }

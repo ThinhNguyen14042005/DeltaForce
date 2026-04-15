@@ -19,8 +19,7 @@ function NewsSection() {
 
   return (
   <section id="news" className="section-shell bg-section-soft text-white">
-    <div className="container-xl">
-      <FadeInSection>
+    <FadeInSection className="container-xl h-100 position-relative z-3">
         <div className="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4 pt-3">
           <SectionTitle
             title="| Tin tức |"
@@ -66,8 +65,7 @@ function NewsSection() {
           </div>
         )}
       </FadeInSection>
-    </div>
-  </section>
+    </section>
 );
 }
 

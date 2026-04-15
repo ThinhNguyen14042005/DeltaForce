@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import FadeInSection from "../components/common/FadeInSection";
 import operatorsData from "../data/operatorsData";
 import "./OperatorsSection.css";
 
@@ -53,7 +54,7 @@ function OperatorsSection() {
         <h2 className="ops-mobile-title">| ĐẶC VỤ |</h2>
       </div>
 
-      <div className="container-xl h-100 position-relative z-3">
+      <FadeInSection className="container-xl h-100 position-relative z-3">
         <div className="row h-100 ops-content-row d-flex flex-column-reverse flex-lg-row">
 
           <div className="col-12 col-lg-3 ops-left-col mt-auto mt-lg-0 pb-3 pb-lg-0">
@@ -151,7 +152,7 @@ function OperatorsSection() {
           </div>
 
         </div>
-      </div>
+      </FadeInSection>
     </section>
   );
 }

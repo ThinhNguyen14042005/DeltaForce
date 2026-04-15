@@ -2,8 +2,8 @@ const weaponsData = [
   {
     id: "m7",
     label: "Súng Trường Xung Kích M7",
-    image: "/images/weapons/M7.jpg", // Ảnh ngang cho PC
-    mobileImage: "/images/weapons/M7_mobile.jpg", // Ảnh dọc cho Mobile
+    image: "/images/weapons/M7.jpg",
+    mobileImage: "/images/weapons/M7_mobile.jpg",
     thumb: "/images/weapons/modelM7.png",
     desc: "Sử dụng đạn 6.8x51mm, hiệu suất hỏa lực cao phù hợp với giao tranh tầm trung hoặc tương đối xa.",
     mobileBgPos: "center 40%", 

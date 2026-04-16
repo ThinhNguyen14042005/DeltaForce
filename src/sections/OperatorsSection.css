@@ -105,7 +105,6 @@
   .ops-big-arrow.right { right: 10px; }
   .ops-big-arrow:disabled { opacity: 0.2; cursor: not-allowed; }
 
-  /* 2. CĂN CHỈNH KHUNG ĐIỀU HƯỚNG TIMELINE & MŨI TÊN NHỎ */
   .ops-nav-mobile-wrapper { 
     width: 100%; display: flex; justify-content: center; align-items: flex-start; position: relative; 
     margin-top: 10px; margin-bottom: 20px; padding: 0 10px; 
@@ -115,12 +114,10 @@
     cursor: pointer; z-index: 5; margin-top: -2px; 
   }
 
-  /* 3. TẠO ĐƯỜNG KẺ NGANG XUYÊN TÂM CHUẨN WEAPONS */
   .ops-tab-card::after { 
     content: ''; position: absolute; left: 0; right: 0; top: 15px; height: 1px; background: rgba(255,255,255,0.2); z-index: 0; 
   }
 
-  /* Xóa bỏ border và flex-direction cũ bị lỗi */
   .ops-timeline-container::before { display: none; }
   .ops-timeline-line-mobile { display: none; }
 
@@ -129,14 +126,12 @@
     padding-top: 0; padding-bottom: 10px; align-items: flex-start; width: 100%;
   }
 
-  /* 4. CĂN CHỈNH THẺ BÀI MOBILE */
   .ops-tab-card {
     min-width: 105px; height: auto; padding: 0 5px; background: transparent; border: none; 
     flex-direction: column; align-items: center; justify-content: flex-start; scroll-snap-align: center; gap: 8px; z-index: 1;
   }
   .ops-tab-bg-img, .ops-tab-overlay, .ops-tab-card:not(.active)::before { display: none; }
 
-  /* 5. CÁC Ô CHỈ BÁO TRẠNG THÁI (VUÔNG VÀNG CÓ CHẤM TRẮNG / VUÔNG XÁM) */
   .ops-active-indicator { 
     height: 30px; width: 100%; margin: 0; padding: 0; display: flex; align-items: center; justify-content: center; background: transparent; position: relative; z-index: 2; transform: none; left: auto; top: auto; 
   }
@@ -156,7 +151,6 @@
     font-size: 14px; line-height: 14px; margin: 8px auto; background: #0d1117; padding: 0 4px; z-index: 2; color: rgba(255,255,255,0.4); position: relative; transform: none; left: auto; top: auto; display: block; 
   }
 
-  /* 6. FONT CHỮ TEXT HIỂN THỊ DƯỚI CÙNG */
   .ops-tab-label { 
     font-size: 0.8rem; color: #a0a0a0; margin-top: 0; font-family: Arial, sans-serif; letter-spacing: 0; font-weight: 600; white-space: normal; text-align: center; line-height: 1.35; width: 100%; text-transform: uppercase;
   }

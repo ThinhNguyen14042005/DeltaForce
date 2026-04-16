@@ -84,7 +84,7 @@
 
   .wpn-nav-arrow { 
     background: transparent; border: none; color: #888; font-size: 1.4rem; padding: 0 10px; 
-    cursor: pointer; z-index: 5; margin-top: -2px; /* Tinh chỉnh để Mũi tên ngang tâm Line */
+    cursor: pointer; z-index: 5; margin-top: -2px; 
   }
 
   .wpn-timeline-container {
